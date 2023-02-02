@@ -1,6 +1,7 @@
 import { Icon, SelectTree } from '@ohif/ui';
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import cloneDeep from 'lodash.clonedeep';
 
 import LabellingTransition from './LabellingTransition.js';
@@ -26,6 +27,7 @@ const LabellingFlow = ({
     editDescription,
     skipAddLabelButton,
   });
+  const [t] = useTranslation('Common');
 
   useEffect(() => {
     const newMeasurementData = cloneDeep(measurementData);
@@ -143,7 +145,7 @@ const LabellingFlow = ({
           className="addLabelButton"
           onClick={showLabelling}
         >
-          {location ? 'Edit' : 'Add'} Label
+          {t(location ? 'Edit Label' : 'Add Label')}
         </button>
       );
     } else {
@@ -153,7 +155,7 @@ const LabellingFlow = ({
             items={OHIFLabellingData}
             columns={1}
             onSelected={selectTreeSelectCallback}
-            selectTreeFirstTitle="Assign Label"
+            selectTreeFirstTitle={t('Assign Label')}
           />
         );
       } else {
@@ -180,15 +182,14 @@ const LabellingFlow = ({
                 className="commonButton left"
                 onClick={relabel}
               >
-                Relabel
+                {t('Re-choose')}
               </button>
               <button
                 type="button"
                 className="commonButton right"
                 onClick={setDescriptionUpdateMode}
               >
-                {description ? 'Edit ' : 'Add '}
-                Description
+                {t(description ? 'Edit Description' : 'Add Description')}
               </button>
             </div>
             <div className="editDescriptionButtons">
@@ -197,14 +198,14 @@ const LabellingFlow = ({
                 className="commonButton left"
                 onClick={descriptionCancel}
               >
-                Cancel
+                {t('Cancel')}
               </button>
               <button
                 type="button"
                 className="commonButton right"
                 onClick={descriptionSave}
               >
-                Save
+                {t('Save')}
               </button>
             </div>
           </>

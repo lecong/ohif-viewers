@@ -1,1 +1,11 @@
-{}
+{
+  "Measurements": "Đo lường",
+  "Criteria nonconformities": "Chi phí không phù hợp",
+  "Delete": "Xoá",
+  "Description": "Mô tả",
+  "MAX": "MAX",
+  "NonTargets": "Không đạt",
+  "Relabel": "Gán nhãn",
+  "Targets": "Mục tiêu",
+  "Save measurements": "Lưu thông số đo lường"
+}

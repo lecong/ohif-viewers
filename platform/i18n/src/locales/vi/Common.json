@@ -11,5 +11,18 @@
   "Series": "Tập ảnh",
   "Show": "Hiển thị",
   "Stop": "Dừng",
-  "StudyDate": "Ngày chụp"
+  "StudyDate": "Ngày chụp",
+  "Delete measurement": "Xoá số đo",
+  "Add Label": "Thêm nhãn",
+  "Update Label": "Sửa nhãn",
+  "Re-choose": "Chọn lại",
+  "Relabel": "Gán nhãn",
+  "Assign Label": "Gán nhãn",
+  "Add Description": "Thêm mô tả",
+  "Edit Description": "Sửa mô tả",
+  "Update Description": "Cập nhật mô tả",
+  "Cancel": "Huỷ",
+  "Save": "Lưu",
+  "Confirm": "Xác nhận",
+  "Search labels": "Tìm kiếm nhãn"
 }

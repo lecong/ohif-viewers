@@ -1,6 +1,7 @@
 import { ContextMenu } from '@ohif/ui';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { commandsManager } from './../App.js';
 
 const toolTypes = [
@@ -21,15 +22,17 @@ const ToolContextMenu = ({
   onClose,
   onDelete,
 }) => {
+  const [t] = useTranslation('Common');
+
   const defaultDropdownItems = [
     {
-      label: 'Delete measurement',
+      label: t('Delete measurement'),
       actionType: 'Delete',
       action: ({ nearbyToolData, eventData }) =>
         onDelete(nearbyToolData, eventData),
     },
     {
-      label: 'Relabel',
+      label: t('Relabel'),
       actionType: 'setLabel',
       action: ({ nearbyToolData, eventData }) => {
         const { tool: measurementData } = nearbyToolData;
@@ -37,7 +40,7 @@ const ToolContextMenu = ({
       },
     },
     {
-      actionType: 'setDescription',
+      actionType: t('setDescription'),
       action: ({ nearbyToolData, eventData }) => {
         const { tool: measurementData } = nearbyToolData;
         onSetDescription(eventData, measurementData);

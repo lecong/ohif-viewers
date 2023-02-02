@@ -1,16 +1,17 @@
 import { Component } from 'react';
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { withTranslation } from 'react-i18next';
 import SimpleDialog from '../SimpleDialog/SimpleDialog.js';
 import './EditDescriptionDialog.css';
 
-export default class EditDescriptionDialog extends Component {
+class EditDescriptionDialog extends Component {
   static propTypes = {
     description: PropTypes.string,
     measurementData: PropTypes.object.isRequired,
     onCancel: PropTypes.func.isRequired,
     onUpdate: PropTypes.func.isRequired,
+    t: PropTypes.func,
   };
 
   constructor(props) {
@@ -32,7 +33,7 @@ export default class EditDescriptionDialog extends Component {
   render() {
     return (
       <SimpleDialog
-        headerTitle="Edit Description"
+        headerTitle={this.props.t('Update Description')}
         onClose={this.onClose}
         onConfirm={this.onConfirm}
         rootClass="editDescriptionDialog"
@@ -62,3 +63,5 @@ export default class EditDescriptionDialog extends Component {
     this.setState({ description: event.target.value });
   };
 }
+
+export default withTranslation('Common')(EditDescriptionDialog);
